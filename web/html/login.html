@@ -2,26 +2,52 @@
 <html lang="en">
 {{template "head" .}}
 <style>
-  h1 {
+  body {
+    background-color: #0d1117;
+    font-family: 'Roboto', sans-serif;
+    color: #c9d1d9;
+    overflow: hidden;
+  }
+
+  h1, h2 {
     text-align: center;
     margin: 20px 0 50px 0;
+    color: #58a6ff;
+    text-shadow: 2px 2px 5px rgba(88, 166, 255, 0.5);
   }
+
   .ant-btn,
   .ant-input {
     height: 50px;
     border-radius: 30px;
+    background: linear-gradient(135deg, #58a6ff 0%, #0d1117 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
+
+  .ant-btn:hover, .ant-input:hover {
+    background: linear-gradient(135deg, #58a6ff 0%, #1f6feb 100%);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.6);
+  }
+
   .ant-input-group-addon {
     border-radius: 0 30px 30px 0;
     width: 50px;
     font-size: 18px;
+    background-color: rgba(14, 73, 181, 0.1);
   }
+
   .ant-input-affix-wrapper .ant-input-prefix {
     left: 23px;
+    color: #58a6ff;
   }
+
   .ant-input-affix-wrapper .ant-input:not(:first-child) {
     padding-left: 50px;
   }
+
   .centered {
     display: flex;
     text-align: center;
@@ -29,22 +55,30 @@
     justify-content: center;
     width: 100%;
   }
+
   .title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
+    text-shadow: 0 3px 10px rgba(88, 166, 255, 0.6);
   }
+
   #app {
     overflow: hidden;
   }
+
   #login {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 2rem;
     padding: 3rem;
     transition: all 0.3s;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
+
   #login:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.5);
   }
+
   .wave {
     opacity: 0.6;
     position: absolute;
@@ -52,38 +86,81 @@
     left: 50%;
     width: 6000px;
     height: 6000px;
-    background-color: rgba(0, 135, 113, 0.08);
+    background-color: rgba(88, 166, 255, 0.2);
     margin-left: -3000px;
     transform-origin: 50% 48%;
     border-radius: 46%;
     pointer-events: none;
-    rotate: 125deg;
+    animation: waveAnimation 15s infinite linear;
   }
+
   .wave2 {
     opacity: 0.4;
-    rotate: 70deg;
+    background-color: rgba(88, 166, 255, 0.15);
+    animation: waveAnimation 20s infinite linear;
   }
+
   .wave3 {
     opacity: 0.2;
-    rotate: 90deg;
+    background-color: rgba(88, 166, 255, 0.1);
+    animation: waveAnimation 25s infinite linear;
   }
+
+  @keyframes waveAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   .under {
-    background-color: #dce9f5;
+    background-color: rgba(217, 236, 255, 0.08);
   }
+
   .dark .wave {
-    background: rgba(14, 73, 181, 0.2);
+    background: rgba(88, 166, 255, 0.3);
   }
+
   .dark .under {
-    background-color: #101828;
+    background-color: #0d1117;
   }
+
   .dark #login {
-    background-color: #151f31;
+    background-color: rgba(21, 31, 49, 0.6);
   }
-  .dark h1 {
+
+  .dark h1, .dark h2 {
     color: rgba(255, 255, 255, 0.85);
   }
+
   .ant-form-item {
     margin-bottom: 16px;
+  }
+
+  /* Select box enhancements */
+  .ant-select {
+    background-color: rgba(14, 73, 181, 0.2);
+    border-radius: 30px;
+  }
+
+  .ant-select-option:hover {
+    background-color: rgba(14, 73, 181, 0.4);
+  }
+
+  /* Switch enhancements */
+  .theme-switch {
+    border: 1px solid #58a6ff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background: linear-gradient(135deg, #58a6ff 0%, #0d1117 100%);
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+    color: white;
+  }
+
+  .theme-switch:hover {
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.6);
   }
 </style>
 <body>
@@ -106,7 +183,7 @@
                         <a-form-item>
                             <a-input v-model.trim="user.username" placeholder='{{ i18n "username" }}'
                                      @keydown.enter.native="login" autofocus>
-                                <a-icon slot="prefix" type="user" style="font-size: 16px;"/>
+                                <a-icon slot="prefix" type="user" style="font-size: 16px; color: #58a6ff;"/>
                             </a-input>
                         </a-form-item>
                         <a-form-item>
