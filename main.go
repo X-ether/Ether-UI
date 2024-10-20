@@ -20,6 +20,20 @@ import (
 	"github.com/op/go-logging"
 )
 
+func redirectToHTTPS(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// 如果请求不是 HTTPS
+		if r.TLS == nil {
+			target := "https://" + r.Host + r.URL.RequestURI()
+			http.Redirect(w, r, target, http.StatusMovedPermanently)
+			return
+		}
+		// 是 HTTPS 请求，继续处理
+		next.ServeHTTP(w, r)
+	})
+}
+
+
 func runWebServer() {
 	log.Printf("%v %v", config.GetName(), config.GetVersion())
 
