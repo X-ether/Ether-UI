@@ -68,6 +68,12 @@ func runWebServer() {
 	mux := http.NewServeMux()
 	wrappedMux := redirectToHTTPS(mux)
 
+	err = server.Start(wrappedMux) // 将包裹的 mux 传入 Start 函数
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
 	var subServer *sub.Server
 	subServer = sub.NewServer()
 	global.SetSubServer(subServer)
