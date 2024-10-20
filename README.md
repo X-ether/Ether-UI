@@ -11,12 +11,6 @@
 
 **If you think this project is helpful to you, you may wish to give a**:star2:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alireza7)
-
-- USDT (TRC20): `TYTq73Gj6dJ67qe58JVPD9zpjW2cc9XgVz`
-- Tezos (XTZ):
-`tz2Wnh2SsY1eezXrcLChu6idWpgdHzUFQcts`
-
 
 ## Quick Overview
 | Features                               |      Enable?       |
