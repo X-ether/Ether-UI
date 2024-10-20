@@ -7,7 +7,7 @@
 [![Downloads](https://img.shields.io/github/downloads/X-ether/Ether-UI/total.svg)](https://img.shields.io/github/downloads/X-ether/Ether-UI/total.svg)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-> **免责声明：** 本项目仅用于个人学习和交流，请不要将其用于非法用途，请勿在生产环境中使用。
+> **免责声明：** 本项目仅用于个人学习和交流，原作者对于其用途和具体功能毫不知情。请不要将其用于非法用途，绝对禁止将其用于越过任何形式的网络审查。请勿在生产环境中使用。
 
 **如果你觉得这个项目对你有帮助，不妨给一个**:star2:
 
