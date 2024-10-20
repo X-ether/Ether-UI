@@ -1,3 +1,5 @@
+# 感谢RPRX大佬对于安全的关注！伟大光荣正确的RPRX万岁！
+
 # Ether-UI
 **一个高级Web面板 • 基于Xray Core构建**
 
