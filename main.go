@@ -65,6 +65,9 @@ func runWebServer() {
 		return
 	}
 
+	mux := http.NewServeMux()
+	wrappedMux := redirectToHTTPS(mux)
+
 	var subServer *sub.Server
 	subServer = sub.NewServer()
 	global.SetSubServer(subServer)
