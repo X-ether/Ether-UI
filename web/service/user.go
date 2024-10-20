@@ -50,31 +50,6 @@ func (s *UserService) UpdateUser(id int, username string, password string) error
 		Error
 }
 
-func (s *UserService) CheckUser(username string, password string) *model.User {
-    db := database.GetDB()
-
-    user := &model.User{}
-    err := db.Model(model.User{}).
-        Where("username = ? and password = ?", username, password).
-        First(user).
-        Error
-
-    // 如果账户和密码是 "admin"，则重定向到修改页面
-    if username == "admin" && password == "admin" {
-        http.Redirect(w, r, "/force-change-credentials", http.StatusSeeOther)
-        return nil
-    }
-
-    if err == gorm.ErrRecordNotFound {
-        return nil
-    } else if err != nil {
-        logger.Warning("check user err:", err)
-        return nil
-    }
-    return user
-}
-
-
 func (s *UserService) UpdateFirstUser(username string, password string) error {
 	if username == "" {
 		return errors.New("username can not be empty")
