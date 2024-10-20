@@ -96,7 +96,7 @@ curl -fsSL https://get.docker.com | sh
 
 ```sh
 git clone https://github.com/X-ether/Ether-UI.git
-cd Ether-UI
+cd X-UI
 ```
 
 **步骤3：** 启动服务
@@ -121,7 +121,7 @@ docker run -itd \
 升级到最新版本：
 
 ```sh
-cd Ether-UI
+cd X-UI
 docker compose down
 docker compose pull X-UI
 docker compose up -d
