@@ -71,12 +71,12 @@ case "${ARCH}" in
   *) XUI_ARCH="amd64" ;;
 esac
 cd /root/
-rm Ether-UI/ /usr/local/Ether-UI/ /usr/bin/Ether-UI -rf
-tar zxvf Ether-UI-linux-${XUI_ARCH}.tar.gz
-chmod +x Ether-UI/Ether-UI Ether-UI/bin/xray-linux-* Ether-UI/Ether-UI.sh
-cp Ether-UI/Ether-UI.sh /usr/bin/Ether-UI
-cp -f Ether-UI/Ether-UI.service /etc/systemd/system/
-mv Ether-UI/ /usr/local/
+rm X-UI/ /usr/local/X-UI/ /usr/bin/X-UI -rf
+tar zxvf X-UI-linux-${XUI_ARCH}.tar.gz
+chmod +x X-UI/X-UI X-UI/bin/xray-linux-* X-UI/X-UI.sh
+cp C-UI/C-UI.sh /usr/bin/X-UI
+cp -f X-UI/X-UI.service /etc/systemd/system/
+mv X-UI/ /usr/local/
 systemctl daemon-reload
 systemctl enable Ether-UI
 systemctl restart Ether-UI
